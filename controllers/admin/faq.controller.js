@@ -13,7 +13,7 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
     try{
         const faqs = await Faq.findAll();
-        res.send(teachers);
+        res.send(faqs);
     }catch(error){
         console.log(error);
     }
