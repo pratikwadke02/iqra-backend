@@ -1,17 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
     const UploadContent = sequelize.define("uploadContent", {
+      course: {
+        type: DataTypes.STRING,
+      },
       subject: {
         type: DataTypes.STRING,
       },
-      title: {
-        type: DataTypes.STRING,
+      video: {
+        type: DataTypes.JSON,
       },
-      link: {
+      author: {
         type: DataTypes.STRING,
-      },
-      // subjectName: {
-      //   type: DataTypes.JSON,
-      // },
+      }
     });
     return UploadContent;
   };
