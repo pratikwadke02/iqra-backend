@@ -45,6 +45,7 @@ app.use(cors(corsOptions));
 //  });
 
 require('./routes/routes.js')(app);
+require('./routes/master/master.routes')(app);
 app.use(express.static(__dirname + "/public"));
 
 
