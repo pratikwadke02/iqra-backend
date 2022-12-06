@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
         },
         questiontype: {
-            tepe: Sequelize.STRING
+            type: Sequelize.STRING
         },
         firstquestion: {
             type: Sequelize.STRING
