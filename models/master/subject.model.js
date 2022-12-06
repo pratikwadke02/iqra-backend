@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
         subject: {
             type: Sequelize.STRING,
         },
+        coursename: {
+            type: Sequelize.STRING
+        }
     })
     return Subject;
 }

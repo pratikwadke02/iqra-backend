@@ -3,15 +3,8 @@ const Category = db.category;
 
 exports.addCategory = async (req, res) => {
   try {
-    //console.log(req.file);
-
-    if (!req.file) {
-      return res.send(`You must select a Image.`);
-    }
-
     const categories = await Category.create({
-      categoryname: req.body.categoryname,
-      categoryimage: req.file.filename
+      category: req.body.category
     });
     res.status(200).send(`Category has been uploaded. ${categories.id}`);
     

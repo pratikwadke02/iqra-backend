@@ -17,6 +17,7 @@ exports.addSubject = async (req, res) => {
         await Subject.create({
             subjectCode: subjectCode,
             subject: req.body.subject,
+            coursename: req.body.coursename
         }).then(data => {
             res.status(200).send(data);
         }
