@@ -5,6 +5,9 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true,
         },
+        questiontype: {
+            tepe: Sequelize.STRING
+        },
         firstquestion: {
             type: Sequelize.STRING
         },

@@ -3,7 +3,7 @@ module.exports = (app) => {
     const medium = require('../../controllers/master/medium.cont');
     const subject = require('../../controllers/master/subject.cont');
     const category = require('../../controllers/master/category.cont');
-    const question = require('../../controllers/question/question.cont');
+    const question = require('../../controllers/question/newquestion.cont');
     //middleware
     const uploadImage = require('../../middleware/upload.image');
 

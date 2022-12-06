@@ -32,6 +32,7 @@ exports.addQuestion = async (req, res) => {
     }
 
     const questions = await Question.create({
+      questiontype: req.body.questiontype,
       firstquestion: req.body.firstquestion,
       statementA: req.body.statementA,
       statementB: req.body.statementB,
