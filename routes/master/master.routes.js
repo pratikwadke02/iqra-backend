@@ -18,8 +18,9 @@ module.exports = (app) => {
     
     router.post("/add-subjects", subject.addSubject);
     router.get("/subjects", subject.findAllSubject);
-    
-    router.post("/add-categorys", category.addCategory);
+
+    //<input type="file" name="categoryimage"/>
+    router.post("/add-categorys", uploadImage.single("categoryimage"), category.addCategory);
     router.get("/categorys", category.getAllCategory);
 
     router.post("/add-courses", course.addCourse);

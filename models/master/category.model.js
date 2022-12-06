@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         category: {
             type: Sequelize.STRING,
+        },
+        categoryimage: {
+            type: Sequelize.STRING,
         }
     })
     return Category;
