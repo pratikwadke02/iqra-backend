@@ -1,7 +1,7 @@
 const db = require("../../models");
 const Category = db.category;
 
-exports.uploadCategory = async (req, res) => {
+exports.addCategory = async (req, res) => {
   try {
     //console.log(req.file);
 
@@ -13,15 +13,15 @@ exports.uploadCategory = async (req, res) => {
       categoryname: req.body.categoryname,
       categoryimage: req.file.filename
     });
-    res.status(200).send(`Image has been uploaded. ${categories.id}`);
+    res.status(200).send(`Category has been uploaded. ${categories.id}`);
     
   } catch (error) {
     //console.log(error);
-    return res.status(500).send(`Error when trying upload images: ${error}`);
+    return res.status(500).send(`Error when trying upload Category: ${error}`);
   }
 };
 
-exports.getCategory = async (req, res) => {
+exports.getAllCategory = async (req, res) => {
     try{
         const categories = await Category.findAll();
         res.status(200).send(categories);

@@ -47,6 +47,7 @@ db.medium = require('./master/medium.model')(sequelize, Sequelize);
 db.subject = require('./master/subject.model')(sequelize, Sequelize);
 
 db.category = require('./master/category.model')(sequelize, Sequelize);
+db.question = require('./question/question.model')(sequelize, Sequelize);
 
 // db.teacher.hasMany(db.student);
 // db.student.belongsTo(db.teacher);
