@@ -47,7 +47,7 @@ exports.deleteSubject = async (req, res) => {
             //console.log(`Id is not present`);
             return res.send(`Fail to delete: Id is not present`);
         }
-        subjects.destroy();
+        await subjects.destroy();
         res.status(200).send(`Subject deleted with Id: ${id}`);
     } catch (err) {
         res.status(500).send({ message: err.message });
@@ -72,7 +72,7 @@ exports.updateSubject = async (req, res) => {
             var incrementedDigits = parseInt(lastDigits, 10) + 1;
             subjectCode = "S" + incrementedDigits;
         }
-        subjects.update({
+        await subjects.update({
             subjectCode: subjectCode,
             subject: req.body.subject
         });

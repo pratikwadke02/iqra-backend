@@ -30,7 +30,7 @@ exports.deleteCourse = async (req, res) => {
       //console.log(`Id is not present`);
       return res.send(`Fail to delete: Id is not present`);
     }
-    courses.destroy();
+    await courses.destroy();
     res.status(200).send(`Course deleted with Id: ${id}`);
   } catch (err) {
     res.status(500).send({ message: err.message });
@@ -45,7 +45,7 @@ exports.updateCourse = async (req, res) => {
       //console.log(`Id is not present`);
       return res.send(`Fail to update: Id is not present`);
     }
-    courses.update({
+    await courses.update({
       course: req.body.course,
       categoryname: req.body.categoryname
     });

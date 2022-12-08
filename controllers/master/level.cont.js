@@ -47,7 +47,7 @@ exports.deleteLevel = async (req, res) => {
             //console.log(`Id is not present`);
             return res.send(`Fail to delete: Id is not present`);
         }
-        levels.destroy();
+        await levels.destroy();
         res.status(200).send(`Level deleted with Id: ${id}`);
     } catch (err) {
         res.status(500).send({ message: err.message });
@@ -72,7 +72,7 @@ exports.updateLevel = async (req, res) => {
             var incrementedDigits = parseInt(lastDigits, 10) + 1;
             levelCode = "S" + incrementedDigits;
         }
-        levels.update({
+        await levels.update({
             levelCode: levelCode,
             level: req.body.level,
         });

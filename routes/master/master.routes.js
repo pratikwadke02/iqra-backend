@@ -33,6 +33,8 @@ module.exports = (app) => {
     //<input type="file" name="categoryimage"/>
     router.post("/add-categorys", uploadImage.single("categoryimage"), category.addCategory);
     router.get("/categorys", category.getAllCategory);
+    router.delete("/delete-categorys/:id", category.deleteCategory);
+    router.put("/update-categorys/:id", uploadImage.single("categoryimage"), category.updateCategory);
 
     //<input type="file" name="questiontag"/>
     router.post("/add-questions", uploadImage.single("questiontag"), question.addQuestion);

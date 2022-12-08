@@ -46,7 +46,7 @@ exports.deleteMedium = async (req, res) => {
             //console.log(`Id is not present`);
             return res.send(`Fail to delete: Id is not present`);
         }
-        mediums.destroy();
+        await mediums.destroy();
         res.status(200).send(`Medium deleted with Id: ${id}`);
     } catch (err) {
         res.status(500).send({ message: err.message });
@@ -71,7 +71,7 @@ exports.updateMedium = async (req, res) => {
             var incrementedDigits = parseInt(lastDigits, 10) + 1;
             mediumCode = "S" + incrementedDigits;
         }
-        mediums.update({
+        await mediums.update({
             mediumCode: mediumCode,
             medium: req.body.medium
         });
