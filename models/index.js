@@ -30,6 +30,7 @@ db.importantEditorials = require("./admin/importantEditorials.model")(
 db.moreLinks = require("./admin/moreLinks.model")(sequelize, DataTypes);
 db.teacher = require("./admin/teacher.model")(sequelize, DataTypes);
 db.student = require("./admin/student.model")(sequelize, DataTypes);
+db.admin = require("./admin/admin.model")(sequelize, Sequelize);
 db.answerEvaluation = require("./admin/answerEvaluation.model")(
   sequelize,
   DataTypes

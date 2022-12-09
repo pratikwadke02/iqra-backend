@@ -26,6 +26,7 @@ module.exports = (app) => {
   const liveClasses = require("../controllers/admin/liveClasses.controller.js");
   const student = require("../controllers/student/auth.controller.js");
   const teacher = require("../controllers/teacher/auth.controller.js");
+  const admin = require("../controllers/admin/auth.controller.js");
 
   const router = require("express").Router();
 
@@ -37,6 +38,9 @@ module.exports = (app) => {
   router.post("/registerTeacher", teacher.register);
   router.get("/getAllTeachers", teacher.findAll);
 
+  router.post("/loginAdmin", admin.login);
+  router.post("/registerAdmin", admin.register);
+  router.get("/getAllAdmins", admin.findAll);
 
   // router.post("/assignTo", assignTo.create);
   // router.get("/getAllStudents", student.findAll);
