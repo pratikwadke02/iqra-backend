@@ -1,35 +1,12 @@
-const express = require("express");
-const router = express.Router();
+// module.exports = (app) => {
 
-const {
-  register,
-  login,
-} = require("../../controllers/teacher/auth.controller");
-const {
-  addTeacher,
-  addResult,
-} = require("../../controllers/teacher/posts.controller");
-const {
-  getTeachers,
-  getAssistants,
-  getAnswerEvaluations,
-} = require("../../controllers/teacher/fetches.controller");
-const {
-  updateTeacher, updateAnswerEvalTeacher,
-} = require("../../controllers/teacher/updates.controller");
-const {
-  deleteTeacher,
-} = require("../../controllers/teacher/discards.controller");
+//   const teacher = require("../../controllers/teacher/auth.controller.js");
 
-router.post("/register", register);
-router.post("/login", login);
-router.post("/addTeacher", addTeacher);
-router.post("/addResult/:studentId", addResult);
-router.get("/getTeachers", getTeachers);
-router.get("/getAssistants", getAssistants);
-router.get("/getAnswerEvaluations/:teacherId", getAnswerEvaluations);
-router.put("/updateTeacher", updateTeacher);
-router.delete("/deleteTeacher", deleteTeacher);
-router.put("/assignAssistant/:id", updateAnswerEvalTeacher);
+//   const router = require("express").Router();
 
-module.exports = router;
+//   router.post("/loginTeacher", teacher.login);
+//   router.post("/registerTeacher", teacher.register);
+//   router.get("/getAllTeachers", teacher.findAll);
+
+//   app.use("/api/teacher", router);
+// };

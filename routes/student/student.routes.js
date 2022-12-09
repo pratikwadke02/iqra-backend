@@ -1,36 +1,15 @@
-const express = require("express");
-const router = express.Router();
+// module.exports = (app) => {
+  
+//   const student = require("../../controllers/student/auth.controller.js");
+
+//   const router = require("express").Router();
+
+//   router.post("/loginStudent", student.login);
+//   router.post("/registerStudent", student.register);
+//   router.get("/getAllStudents", student.findAll);
 
 
-const {
-  register,
-  login,
-} = require("../../controllers/student/auth.controller");
-const {
-  addStudent,
-  addAnswerEvaluation,
-} = require("../../controllers/student/posts.controller");
-const {
-  getStudents,
-  getStudent,
-  getResults,
-} = require("../../controllers/student/fetches.controller");
-const {
-  updateStudent,
-} = require("../../controllers/student/updates.controller");
-const {
-  deleteStudent,
-} = require("../../controllers/student/discards.controller");
 
-
-router.post("/register", register);
-router.post("/login", login);
-router.post("/addStudent", addStudent);
-router.post("/addAnswerEvaluation/:teacherId", addAnswerEvaluation);
-router.get("/getStudents", getStudents);
-router.get("/getStudent/:id", getStudent);
-router.get("/getResults/:studentId", getResults);
-router.put("/updateStudent", updateStudent);
-router.delete("/deleteStudent", deleteStudent);
-
-module.exports = router;
+ 
+//   app.use("/api/student", router);
+// };

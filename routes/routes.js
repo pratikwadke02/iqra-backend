@@ -24,8 +24,19 @@ module.exports = (app) => {
   const uploadContent = require("../controllers/admin/uploadContent.controller.js");
   const faq = require("../controllers/admin/faq.controller.js");
   const liveClasses = require("../controllers/admin/liveClasses.controller.js");
+  const student = require("../controllers/student/auth.controller.js");
+  const teacher = require("../controllers/teacher/auth.controller.js");
 
   const router = require("express").Router();
+
+  router.post("/loginStudent", student.login);
+  router.post("/registerStudent", student.register);
+  router.get("/getAllStudents", student.findAll);
+
+  router.post("/loginTeacher", teacher.login);
+  router.post("/registerTeacher", teacher.register);
+  router.get("/getAllTeachers", teacher.findAll);
+
 
   // router.post("/assignTo", assignTo.create);
   // router.get("/getAllStudents", student.findAll);
@@ -54,6 +65,7 @@ module.exports = (app) => {
 
   // router.post("/teacherDetails", teacherDetails.create);
   // router.get("/teacherDetails", teacherDetails.findAll);
+
 
   router.post("/addAddCourse", addCourse.create);
   router.get("/getAddCourse", addCourse.findAll);
