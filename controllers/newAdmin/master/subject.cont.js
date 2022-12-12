@@ -1,5 +1,5 @@
 
-const db = require('../../models');
+const db = require('../../../models');
 const Subject = db.subject;
 
 exports.addSubject = async (req, res) => {

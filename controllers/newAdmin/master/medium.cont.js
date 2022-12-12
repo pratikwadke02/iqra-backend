@@ -1,4 +1,4 @@
-const db = require('../../models');
+const db = require('../../../models');
 const Medium = db.medium;
 
 exports.addMedium = async (req, res) => {

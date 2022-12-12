@@ -1,5 +1,5 @@
 
-const db = require('../../models');
+const db = require('../../../models');
 const Level = db.level;
 
 exports.addLevel = async (req, res) => {

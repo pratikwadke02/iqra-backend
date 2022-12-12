@@ -1,10 +1,11 @@
 module.exports = (app) => {
-    const level = require('../../controllers/master/level.cont');
-    const medium = require('../../controllers/master/medium.cont');
-    const subject = require('../../controllers/master/subject.cont');
-    const category = require('../../controllers/master/category.cont');
-    const course = require('../../controllers/master/course.cont');
-    const question = require('../../controllers/question/newquestion.cont');
+    const level = require('../../controllers/newAdmin/master/level.cont');
+    const medium = require('../../controllers/newAdmin/master/medium.cont');
+    const subject = require('../../controllers/newAdmin/master/subject.cont');
+    const category = require('../../controllers/newAdmin/master/category.cont');
+    const course = require('../../controllers/newAdmin/course.cont');
+    const question = require('../../controllers/newAdmin/newquestion.cont');
+    const article = require('../../controllers/newAdmin/article.cont');
     //middleware
     const uploadImage = require('../../middleware/upload.image');
 
@@ -39,6 +40,9 @@ module.exports = (app) => {
     //<input type="file" name="questiontag"/>
     router.post("/add-questions", uploadImage.single("questiontag"), question.addQuestion);
     router.get("/questions", question.getAllQuestion);
+
+    router.post("/add-articles", article.addArticle);
+    router.get("/articles", article.getAllArticle);
 
     app.use("/api/master", router);
 
