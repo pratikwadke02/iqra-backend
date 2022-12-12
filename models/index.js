@@ -42,14 +42,15 @@ db.uploadContent = require('./admin/uploadContent.model')(sequelize, Sequelize);
 db.faq = require('./admin/faq.model')(sequelize, Sequelize);
 db.liveClasses = require('./admin/liveClasses.model')(sequelize, Sequelize);
 
-//master
-db.level = require('./master/level.model')(sequelize, Sequelize);
-db.medium = require('./master/medium.model')(sequelize, Sequelize);
-db.subject = require('./master/subject.model')(sequelize, Sequelize);
-db.course = require('./master/course.model')(sequelize, Sequelize);
-db.category = require('./master/category.model')(sequelize, Sequelize);
-
-db.question = require('./question/question.model')(sequelize, Sequelize);
+//newAdmin/master
+db.level = require('./newAdmin/master/level.model')(sequelize, Sequelize);
+db.medium = require('./newAdmin/master/medium.model')(sequelize, Sequelize);
+db.subject = require('./newAdmin/master/subject.model')(sequelize, Sequelize);
+db.category = require('./newAdmin/master/category.model')(sequelize, Sequelize);
+//newAdmin
+db.course = require('./newAdmin/course.model')(sequelize, Sequelize);
+db.question = require('./newAdmin/question.model')(sequelize, Sequelize);
+db.article = require('./newAdmin/article.model')(sequelize, Sequelize);
 
 // db.teacher.hasMany(db.student);
 // db.student.belongsTo(db.teacher);
